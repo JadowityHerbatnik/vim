@@ -2,7 +2,7 @@
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " ':w<CR>' is 4 key strokes, ',w' is two 1!1!!1
-	map <C-s> :w<CR>
+	map <C-s> :update<CR>
 
 " Same for ':wq'
 	" map <leader>wq :wq<CR>

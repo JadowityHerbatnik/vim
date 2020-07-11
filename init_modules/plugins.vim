@@ -16,7 +16,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 " Plug 'peitalin/vim-jsx-typescript'
 Plug 'leafgarland/typescript-vim'
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
