@@ -80,6 +80,9 @@ nmap <F2> <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+" CocSearch
+nmap <leader>cs <Esc>:CocSearch <Right>
+
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
