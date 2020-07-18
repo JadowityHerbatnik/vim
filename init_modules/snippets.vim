@@ -16,3 +16,6 @@
 	autocmd FileType vue,javascript,typescriptreact inoremap <leader>di dispatch( { type: "" } )<Esc>F"i
 
 	autocmd FileType vue,javascript,typescriptreact inoremap <leader>sf ${ ( { } ) => <++>}<Esc>F{a
+
+	autocmd FileType vue,javascript,typescriptreact nnoremap <leader>es <Esc>O// eslint-disable-next-line no-undef<Esc><Down>
+
