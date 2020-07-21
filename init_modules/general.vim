@@ -2,7 +2,7 @@
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " ':w<CR>' is 4 key strokes, ',w' is two 1!1!!1
-	map <C-s> :update<CR>
+	map <C-s> :mksession! ~/.vim_session.vim<CR>:update<CR>
 
 " Same for ':wq'
 	" map <leader>wq :wq<CR>
@@ -14,7 +14,8 @@
 	map <leader>Q :q!<CR>
 
 " Reload vim
-	nnoremap <leader>s <Esc>:source ~/.vimrc<CR>
+	nnoremap <leader>sv <Esc>:source ~/.vimrc<CR>
+	nnoremap <leader>ss <Esc>:source ~/.vim_session.vim<CR>
 
 " Automatically deletes all trailing whitespace on save.
 	autocmd BufWritePre * %s/\s\+$//e
