@@ -3,7 +3,8 @@
 
   map <leader>gb :Gblame<CR>
 
-  map <leader>gd :Gvdiff!<CR>
+  map <leader>gcd :Gvdiff!<CR>
+  map <leader>gd :Gvdiffsplit<CR>
   map <leader>1 :diffget //2<CR>
   map <leader>2 :diffget //3<CR>
 
