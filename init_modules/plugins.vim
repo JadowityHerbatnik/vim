@@ -19,6 +19,7 @@ Plug 'camspiers/lens.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim', { 'as': 'dracula' }
 " Plug 'gruvbox-community/gruvbox'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'SirVer/ultisnips'
