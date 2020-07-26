@@ -9,6 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'Yggdroot/indentLine'
 Plug 'lilydjwg/colorizer'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'camspiers/lens.vim'
 " Plug 'posva/vim-vue'
 " Plug 'dense-analysis/ale'
 " Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
@@ -16,8 +17,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 " Plug 'peitalin/vim-jsx-typescript'
 Plug 'leafgarland/typescript-vim'
-" Plug 'morhetz/gruvbox'
-Plug 'gruvbox-community/gruvbox'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'morhetz/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -54,6 +56,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
 Plug 'tpope/vim-fugitive'
+Plug 'tommcdo/vim-fubitive'
 Plug 'idanarye/vim-merginal'
 Plug 'airblade/vim-gitgutter'
 Plug 'LukeSmithxyz/vimling'

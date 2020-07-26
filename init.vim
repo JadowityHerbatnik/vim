@@ -23,34 +23,36 @@ source $HOME/.config/nvim/init_modules/smooth_scroll.vim
   set go=a
   set mouse=a
   set clipboard+=unnamedplus
-	nnoremap c "_c
-	set nocompatible
-	filetype plugin indent on
-	set omnifunc=syntaxcomplete#Complete
-	syntax enable
-	set encoding=utf-8
-	set number relativenumber
+  nnoremap c "_c
+  set nocompatible
+  filetype plugin indent on
+  set omnifunc=syntaxcomplete#Complete
+  syntax enable
+  set encoding=utf-8
+  set number relativenumber
   set expandtab
-	set tabstop=2
-	set shiftwidth=2
-	set hlsearch
-	set termguicolors
-	set t_Co=256
-	colorscheme flattened_dark
+  set tabstop=2
+  set shiftwidth=2
+  set hlsearch
+  set termguicolors
+  set t_Co=256
+  set diffopt+=vertical
 
-	let g:gruvbox_italic = 1
-	let g:gruvbox_contrast_dark = "soft"
+  let g:gruvbox_italic = 1
+  let g:gruvbox_contrast_dark = "hard"
+  let g:tokyonight_style = 'night' " available: night, storm
+  let g:tokyonight_enable_italic = 1
+
+  colorscheme flattened_dark
 
   set smarttab
   set cindent
 " always uses spaces instead of tab characters
 
-
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
