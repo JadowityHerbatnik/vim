@@ -8,6 +8,8 @@
 	map <C-k> <C-w>k
 	map <C-l> <C-w>l
 
+  map <silent> <A-h> <Esc>:tabprevious<CR>
+  map <silent> <A-l> <Esc>:tabnext<CR>
 " Navigate in Insert mode
 	inoremap <C-k> <Up>
 	inoremap <C-j> <Down>
