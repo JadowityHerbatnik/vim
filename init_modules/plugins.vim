@@ -10,6 +10,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'lilydjwg/colorizer'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'camspiers/lens.vim'
+Plug 'mogelbrod/vim-jsonpath'
 " Plug 'posva/vim-vue'
 " Plug 'dense-analysis/ale'
 " Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
