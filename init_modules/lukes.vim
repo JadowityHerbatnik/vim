@@ -25,7 +25,7 @@
 	imap <leader>d <esc>:call ToggleDeadKeys()<CR>a
 	nm <leader>i :call ToggleIPA()<CR>
 	imap <leader>i <esc>:call ToggleIPA()<CR>a
-	nm <leader>e :call ToggleProse()<CR>
+	" nm <leader>e :call ToggleProse()<CR>
 
   " Check file in shellcheck:
 "	map <leader>s :!clear && shellcheck %<CR>

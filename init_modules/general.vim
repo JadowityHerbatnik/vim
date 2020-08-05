@@ -1,3 +1,11 @@
+" Like tabdo but restore the current tab.
+  function! TabDo(command)
+    let currTab=tabpagenr()
+    execute 'tabdo ' . a:command
+    execute 'tabn ' . currTab
+  endfunction
+  com! -nargs=+ -complete=command Tabdo call TabDo(<q-args>)
+
 " Save file as sudo on files that require root permission
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
@@ -16,6 +24,9 @@
 " Reload vim
 	nnoremap <leader>sv <Esc>:source ~/.vimrc<CR>
 	nnoremap <leader>ss <Esc>:source ~/.vim_session.vim<CR>
+
+" Reload all tabs
+  nnoremap <leader>e <Esc>:Tabdo e<CR>
 
 " Automatically deletes all trailing whitespace on save.
 	autocmd BufWritePre * %s/\s\+$//e
