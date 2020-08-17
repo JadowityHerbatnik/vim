@@ -16,7 +16,6 @@ source $HOME/.config/nvim/init_modules/indentation.vim
 source $HOME/.config/nvim/init_modules/git.vim
 source $HOME/.config/nvim/init_modules/ack.vim
 source $HOME/.config/nvim/init_modules/fzf.vim
-source $HOME/.config/nvim/init_modules/smooth_scroll.vim
 source $HOME/.config/nvim/init_modules/json.vim
 
 " Some basics:
