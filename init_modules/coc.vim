@@ -58,6 +58,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gvd :call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <silent> gsd :call CocAction('jumpDefinition', 'split')<CR>
 nmap <silent> gtd :call CocAction('jumpDefinition', 'tabe')<CR>
 
 " Use K to show documentation in preview window
