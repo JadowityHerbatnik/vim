@@ -19,3 +19,6 @@
 
 	autocmd FileType vue,javascript,typescriptreact nnoremap <leader>es <Esc>O// eslint-disable-next-line no-undef<Esc><Down>
 
+	autocmd FileType vue,javascript,typescriptreact inoremap <leader>it it('', () => {<CR><++><CR>});<Esc><Up><Up>0f'a
+	autocmd FileType vue,javascript,typescriptreact inoremap <leader>de describe('', () => {<CR><++><CR>});<Esc><Up><Up>0f'a
+	autocmd FileType vue,javascript,typescriptreact inoremap <leader>scr screen.getByRole('', {<++>})<Esc>F'i
