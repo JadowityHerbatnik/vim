@@ -22,3 +22,4 @@
 	autocmd FileType vue,javascript,typescriptreact inoremap <leader>it it('', () => {<CR><++><CR>});<Esc><Up><Up>0f'a
 	autocmd FileType vue,javascript,typescriptreact inoremap <leader>de describe('', () => {<CR><++><CR>});<Esc><Up><Up>0f'a
 	autocmd FileType vue,javascript,typescriptreact inoremap <leader>scr screen.getByRole('', {<++>})<Esc>F'i
+	autocmd FileType vue,javascript,typescriptreact inoremap <leader>scd screen.debug()
