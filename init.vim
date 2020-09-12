@@ -25,6 +25,7 @@ source $HOME/.config/nvim/init_modules/rainbow.vim
   set mouse=a
   set clipboard+=unnamedplus
   nnoremap c "_c
+  vnoremap x "_x
   set nocompatible
   filetype plugin indent on
   set omnifunc=syntaxcomplete#Complete
