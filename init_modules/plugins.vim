@@ -5,6 +5,10 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 	autocmd VimEnter * PlugInstall
 endif
 
+
+nmap <leader>pi :PlugInstall<CR>
+nmap <Leader>pc :PlugClean<CR>
+
 call plug#begin('~/.config/nvim/plugged')
 Plug 'Yggdroot/indentLine'
 Plug 'lilydjwg/colorizer'
