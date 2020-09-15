@@ -40,6 +40,8 @@ source $HOME/.config/nvim/init_modules/rainbow.vim
   set t_Co=256
   set diffopt+=vertical
 
+  let g:neosolarized_italic = 1
+  let g:neosolarized_termtrans = 1
   let g:gruvbox_italic = 1
   let g:gruvbox_contrast_dark = "hard"
   let g:tokyonight_style = 'night' " available: night, storm
