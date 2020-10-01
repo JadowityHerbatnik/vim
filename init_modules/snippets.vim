@@ -27,3 +27,5 @@
 
 	autocmd FileType vue,javascript,typescriptreact inoremap <leader>sn saga.next().value<Esc>F(a
 	autocmd FileType vue,javascript,typescriptreact inoremap <leader>yp yield put({ type: })<Esc>F:a
+	autocmd FileType vue,javascript,typescriptreact inoremap <leader>yt yield take({ type: })<Esc>F:a
+	autocmd FileType vue,javascript,typescriptreact inoremap <leader>yc yield call({ type: })<Esc>F:a
