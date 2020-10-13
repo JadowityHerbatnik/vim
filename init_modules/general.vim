@@ -28,6 +28,9 @@
 " Reload all tabs
   nnoremap <leader>e <Esc>:Tabdo e<CR>
 
+" Save all tabs
+  nnoremap <leader>tu <Esc>:Tabdo :update<CR>
+
 " Automatically deletes all trailing whitespace on save.
 	autocmd BufWritePre * %s/\s\+$//e
 
