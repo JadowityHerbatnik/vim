@@ -12,7 +12,6 @@ nmap <Leader>pc :PlugClean<CR>
 call plug#begin('~/.config/nvim/plugged')
 Plug 'Yggdroot/indentLine'
 Plug 'lilydjwg/colorizer'
-Plug 'luochen1990/rainbow'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'camspiers/lens.vim'
 Plug 'mogelbrod/vim-jsonpath'
