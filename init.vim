@@ -18,6 +18,7 @@ source $HOME/.config/nvim/init_modules/ack.vim
 source $HOME/.config/nvim/init_modules/fzf.vim
 source $HOME/.config/nvim/init_modules/json.vim
 source $HOME/.config/nvim/init_modules/rainbow.vim
+source $HOME/.config/nvim/init_modules/vimspector.vim
 
 " Some basics:
   set background=dark

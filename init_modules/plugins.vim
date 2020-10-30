@@ -10,6 +10,7 @@ nmap <leader>pi :PlugInstall<CR>
 nmap <Leader>pc :PlugClean<CR>
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'puremourning/vimspector'
 Plug 'Yggdroot/indentLine'
 Plug 'lilydjwg/colorizer'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
