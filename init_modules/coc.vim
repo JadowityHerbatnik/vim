@@ -143,6 +143,3 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " Press Escape to stop highlighting matching patterns
 	nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
-
- map <silent> <leader>t <Plug>(coc-terminal-toggle)
-

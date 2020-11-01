@@ -2,14 +2,28 @@
   noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
   noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 
-" Shortcutting split navigation, saving a keypress:
-	map <C-h> <C-w>h
-	map <C-j> <C-w>j
-	map <C-k> <C-w>k
-	map <C-l> <C-w>l
+" Navigate between splits (no left-right for terminal window to use <C-l> as clear)
+  nnoremap <C-h> <C-w>h
+  nnoremap <C-j> <C-w>j
+  nnoremap <C-k> <C-w>k
+  nnoremap <C-l> <C-w>l
+  tnoremap <C-j> <C-\><C-n><C-w>j
+  tnoremap <C-k> <C-\><C-n><C-w>k
 
+" Resize split windows
+  nnoremap <silent> <A->> 5<C-w>>
+  nnoremap <silent> <A-<> 5<C-w><
+  nnoremap <silent> <A-+> 5<C-w>+
+  nnoremap <silent> <A--> 5<C-w>-
+  tnoremap <silent> <A->> <C-\><C-N>5<C-w>>
+  tnoremap <silent> <A-<> <C-\><C-N>5<C-w><
+  tnoremap <silent> <A-+> <C-\><C-N>5<C-w>+
+  tnoremap <silent> <A--> <C-\><C-N>5<C-w>-
+
+" Switch between tabs
   map <silent> <A-h> <Esc>:tabprevious<CR>
   map <silent> <A-l> <Esc>:tabnext<CR>
+
 " Navigate in Insert mode
 	inoremap <C-k> <Up>
 	inoremap <C-j> <Down>
@@ -52,6 +66,3 @@
   inoremap '' ''<Left>
   inoremap `` ``<Left>
 
-" Resize split windows
-  nnoremap <silent> <A->> :vertical resize +10<CR>
-  nnoremap <silent> <A-<> :vertical resize -10<CR>
