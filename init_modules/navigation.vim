@@ -10,6 +10,10 @@
   tnoremap <C-j> <C-\><C-n><C-w>j
   tnoremap <C-k> <C-\><C-n><C-w>k
 
+  tnoremap <A-k> <Up>
+  tnoremap <A-j> <Down>
+
+
 " Resize split windows
   nnoremap <silent> <A->> 5<C-w>>
   nnoremap <silent> <A-<> 5<C-w><
