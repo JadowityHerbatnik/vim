@@ -9,6 +9,9 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-json',
   \ 'coc-yaml',
+  \ 'coc-python',
+  \ 'coc-marketplace',
+  \ 'coc-swagger',
   \ ]
 " from readme
 " if hidden is not set, TextEdit might fail.

@@ -1,1 +1,5 @@
-{ "prettier.eslintIntegration": true }
+{
+  "prettier.eslintIntegration": true,
+  "python.jediEnabled": false,
+  "python.formatting.provider": "black"
+}
