@@ -48,7 +48,7 @@ source $HOME/.config/nvim/init_modules/vimspector.vim
   let g:tokyonight_style = 'night' " available: night, storm
   let g:tokyonight_enable_italic = 1
 
-  colorscheme flattened_dark
+  colorscheme NeoSolarized
 
   set smarttab
   set cindent
