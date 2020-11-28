@@ -20,5 +20,11 @@
 " Generate alacritty config on write
 	autocmd BufWritePost *alacritty.yml.in silent !xalacritty
 
+" Recompile and restart dwm on write
+	autocmd BufWritePost */dwm/config.h !compiler % && kill -1 $(pidof dwm)
+
+" Recompile and restart dwmblocks on write
+ autocmd BufWritePost */dwmblocks/config.h !compiler % && { killall -q dwmblocks;setsid dwmblocks & }
+
 " Shell scripits shebang
 	inoremap <leader>she  #!/usr/bin/env sh<CR>
