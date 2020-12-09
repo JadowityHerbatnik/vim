@@ -18,7 +18,8 @@
 	" map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
-	map <leader>o :setlocal spell! spelllang=en_us<CR>
+	map <leader>o :setlocal spell! spelllang=pl<CR>
+	map <leader>O :setlocal spell! spelllang=en_us<CR>
 
 " vimling:
 	nm <leader>d :call ToggleDeadKeys()<CR>
