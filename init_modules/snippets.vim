@@ -29,3 +29,6 @@
 	autocmd FileType vue,javascript,typescriptreact inoremap <leader>yp yield put({ type: })<Esc>F:a
 	autocmd FileType vue,javascript,typescriptreact inoremap <leader>yt yield take({ type: })<Esc>F:a
 	autocmd FileType vue,javascript,typescriptreact inoremap <leader>yc yield call()<Esc>i
+
+  " propName={propName}
+	autocmd FileType vue,javascript,typescriptreact inoremap <leader>pr <Esc>yiWEa={}<Left><Esc>p
