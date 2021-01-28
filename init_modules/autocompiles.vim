@@ -26,5 +26,8 @@
 " Recompile and restart dwmblocks on write
  autocmd BufWritePost */dwmblocks/config.h !compiler % && { killall -q dwmblocks;setsid dwmblocks & }
 
+" Recompile and restart dmenu on write
+	autocmd BufWritePost */dmenu/config.h !compiler %
+
 " Shell scripits shebang
 	inoremap <leader>she  #!/usr/bin/env sh<CR>
