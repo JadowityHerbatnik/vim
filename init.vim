@@ -19,6 +19,7 @@ source $HOME/.config/nvim/init_modules/fzf.vim
 source $HOME/.config/nvim/init_modules/json.vim
 source $HOME/.config/nvim/init_modules/rainbow.vim
 source $HOME/.config/nvim/init_modules/vimspector.vim
+source $HOME/.config/nvim/init_modules/syntax-highlighting.vim
 
 " Some basics:
   set background=dark
