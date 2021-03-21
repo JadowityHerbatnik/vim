@@ -11,6 +11,7 @@ nmap <Leader>pc :PlugClean<CR>
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'puremourning/vimspector'
+Plug 'chriskempson/base16-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'lilydjwg/colorizer'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
