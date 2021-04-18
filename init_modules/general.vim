@@ -12,15 +12,6 @@
 " ':w<CR>' is 4 key strokes, ',w' is two 1!1!!1
 	map <C-s> :mksession! ~/.vim_session.vim<CR>:update<CR>
 
-" Same for ':wq'
-	" map <leader>wq :wq<CR>
-
-" And ':q'
-	map <leader>q :q<CR>
-
-" And also ':q!'
-	map <leader>Q :q!<CR>
-
 " Reload vim
 	nnoremap <leader>sv <Esc>:source ~/.vimrc<CR>
 	nnoremap <leader>ss <Esc>:source ~/.vim_session.vim<CR>
