@@ -19,7 +19,7 @@
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=pl<CR>
-	map <leader>O :setlocal spell! spelllang=en_us<CR>
+	map <leader>O :setlocal spell! spelllang=en<CR>
 
 " vimling:
 	nm <leader>d :call ToggleDeadKeys()<CR>
