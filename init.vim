@@ -17,6 +17,7 @@ source $HOME/.config/nvim/init_modules/git.vim
 source $HOME/.config/nvim/init_modules/ack.vim
 source $HOME/.config/nvim/init_modules/fzf.vim
 source $HOME/.config/nvim/init_modules/json.vim
+source $HOME/.config/nvim/init_modules/airline.vim
 source $HOME/.config/nvim/init_modules/rainbow.vim
 source $HOME/.config/nvim/init_modules/vimspector.vim
 source $HOME/.config/nvim/init_modules/syntax-highlighting.vim
