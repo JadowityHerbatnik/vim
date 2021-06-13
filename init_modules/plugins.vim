@@ -10,19 +10,19 @@ nmap <leader>pi :PlugInstall<CR>
 nmap <Leader>pc :PlugClean<CR>
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'puremourning/vimspector'
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'lilydjwg/colorizer'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'camspiers/lens.vim'
 Plug 'mogelbrod/vim-jsonpath'
-Plug 'leafgarland/typescript-vim'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'iCyMind/NeoSolarized'
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
