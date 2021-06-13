@@ -50,7 +50,7 @@ source $HOME/.config/nvim/init_modules/syntax-highlighting.vim
   let g:tokyonight_style = 'night' " available: night, storm
   let g:tokyonight_enable_italic = 1
 
-  colorscheme NeoSolarized
+  colorscheme base16-onedark
 
   set smarttab
   set cindent
