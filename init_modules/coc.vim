@@ -148,7 +148,5 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-" Press Escape to stop highlighting matching patterns
-	nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 au! BufNewFile,BufRead *.tsx setf typescriptreact

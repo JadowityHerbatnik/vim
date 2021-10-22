@@ -10,10 +10,10 @@ nmap <leader>pi :PlugInstall<CR>
 nmap <Leader>pc :PlugClean<CR>
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'othree/yajs.vim'
-Plug 'othree/es.next.syntax.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+Plug 'rakr/vim-one'
 Plug 'chriskempson/base16-vim'
-Plug 'Yggdroot/indentLine'
 Plug 'lilydjwg/colorizer'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'camspiers/lens.vim'
@@ -25,7 +25,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'

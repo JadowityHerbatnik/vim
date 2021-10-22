@@ -2,7 +2,6 @@ let g:mapleader =","
 
 source $HOME/.config/nvim/init_modules/plugins.vim
 source $HOME/.config/nvim/init_modules/coc.vim
-" source $HOME/.config/nvim/init_modules/ctrlp.vim
 source $HOME/.config/nvim/init_modules/navigation.vim
 source $HOME/.config/nvim/init_modules/snippets.vim
 source $HOME/.config/nvim/init_modules/prettier.vim
@@ -11,16 +10,12 @@ source $HOME/.config/nvim/init_modules/lukes.vim
 source $HOME/.config/nvim/init_modules/emmet.vim
 source $HOME/.config/nvim/init_modules/nerdtree.vim
 source $HOME/.config/nvim/init_modules/autocompiles.vim
-source $HOME/.config/nvim/init_modules/general.vim
-source $HOME/.config/nvim/init_modules/indentation.vim
 source $HOME/.config/nvim/init_modules/git.vim
-source $HOME/.config/nvim/init_modules/ack.vim
 source $HOME/.config/nvim/init_modules/fzf.vim
 source $HOME/.config/nvim/init_modules/json.vim
 source $HOME/.config/nvim/init_modules/airline.vim
-source $HOME/.config/nvim/init_modules/rainbow.vim
-source $HOME/.config/nvim/init_modules/vimspector.vim
 source $HOME/.config/nvim/init_modules/syntax-highlighting.vim
+source $HOME/.config/nvim/init_modules/treesitter.lua
 
 " Some basics:
   set background=dark
@@ -50,7 +45,7 @@ source $HOME/.config/nvim/init_modules/syntax-highlighting.vim
   let g:tokyonight_style = 'night' " available: night, storm
   let g:tokyonight_enable_italic = 1
 
-  colorscheme base16-onedark
+  colorscheme one
 
   set smarttab
   set cindent

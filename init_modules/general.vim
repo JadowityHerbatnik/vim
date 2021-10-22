@@ -43,3 +43,6 @@ command! DeleteHiddenBuffers call DeleteHiddenBuffers()
 " Toggle terminal window in horizontal split
   nnoremap <silent> <space>t     :split term://$0 <CR><C-w>Ja
   tnoremap <silent> <space>t     <C-\><C-n>ZQ
+
+" Press Escape to stop highlighting matching patterns
+	nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
