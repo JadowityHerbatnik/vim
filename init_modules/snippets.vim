@@ -33,5 +33,5 @@
 	autocmd FileType vue,javascript,typescriptreact,typescript inoremap <leader>yc yield call()<Esc>i
 
   " propName={propName}
-	autocmd FileType vue,javascript,typescriptreact,typescript inoremap <leader>pr <Esc>yiWEa={}<Left><Esc>p
-  autocmd FileType vue,javascript,typescriptreact,typescript inoremap <leader>tr <Translate {...messages.} /><Esc>F}i
+	autocmd FileType vue,javascript,typescriptreact inoremap <leader>pr <Esc>yiWEa={}<Left><Esc>p
+	autocmd FileType vue,javascript,typescriptreact inoremap <leader>tr <Translate {...messages.} /><Esc>F}i

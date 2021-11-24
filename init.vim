@@ -1,10 +1,8 @@
 let g:mapleader =","
 
 source $HOME/.config/nvim/init_modules/plugins.vim
-source $HOME/.config/nvim/init_modules/coc.vim
 source $HOME/.config/nvim/init_modules/navigation.vim
 source $HOME/.config/nvim/init_modules/snippets.vim
-source $HOME/.config/nvim/init_modules/prettier.vim
 source $HOME/.config/nvim/init_modules/general.vim
 source $HOME/.config/nvim/init_modules/lukes.vim
 source $HOME/.config/nvim/init_modules/emmet.vim
@@ -16,7 +14,8 @@ source $HOME/.config/nvim/init_modules/json.vim
 source $HOME/.config/nvim/init_modules/airline.vim
 source $HOME/.config/nvim/init_modules/syntax-highlighting.vim
 source $HOME/.config/nvim/init_modules/treesitter.lua
-source $HOME/.config/nvim/init_modules/comments.lua
+source $HOME/.config/nvim/init_modules/telescope.lua
+source $HOME/.config/nvim/init_modules/lsp.lua
 
 " Some basics:
   set background=dark
