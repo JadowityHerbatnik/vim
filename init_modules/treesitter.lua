@@ -37,6 +37,7 @@ require'nvim-treesitter.configs'.setup {
     "lua",
     "json",
     "yaml",
+    "bash",
   },
 }
 local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
