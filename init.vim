@@ -37,6 +37,8 @@ source $HOME/.config/nvim/init_modules/treesitter.lua
   set termguicolors
   set t_Co=256
   set diffopt+=vertical
+" disable incremental preview during substition
+  set inccommand=""
 
   let g:neosolarized_italic = 1
   let g:neosolarized_termtrans = 1
