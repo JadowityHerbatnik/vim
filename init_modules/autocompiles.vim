@@ -29,5 +29,7 @@
 " Recompile and restart dmenu on write
 	autocmd BufWritePost */dmenu/config.h !compiler %
 
+	autocmd BufWritePost *.hs !compiler %
+
 " Shell scripits shebang
 	inoremap <leader>she  #!/usr/bin/env sh<CR>
