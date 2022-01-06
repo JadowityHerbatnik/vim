@@ -10,6 +10,7 @@ nmap <leader>pi :PlugInstall<CR>
 nmap <Leader>pc :PlugClean<CR>
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'chr4/nginx.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'rakr/vim-one'
@@ -25,7 +26,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
@@ -39,7 +39,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
 Plug 'tpope/vim-fugitive'
-Plug 'tommcdo/vim-fubitive'
 Plug 'rhysd/git-messenger.vim'
 Plug 'idanarye/vim-merginal'
 Plug 'airblade/vim-gitgutter'
