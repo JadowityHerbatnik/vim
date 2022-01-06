@@ -47,7 +47,7 @@ source $HOME/.config/nvim/init_modules/treesitter.lua
   let g:tokyonight_style = 'night' " available: night, storm
   let g:tokyonight_enable_italic = 1
 
-  colorscheme one
+  colorscheme base16-onedark
 
   set smarttab
   set cindent
