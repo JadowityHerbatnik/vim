@@ -16,6 +16,7 @@ source $HOME/.config/nvim/init_modules/json.vim
 source $HOME/.config/nvim/init_modules/airline.vim
 source $HOME/.config/nvim/init_modules/syntax-highlighting.vim
 source $HOME/.config/nvim/init_modules/treesitter.lua
+source $HOME/.config/nvim/init_modules/comments.lua
 
 " Some basics:
   set background=dark
@@ -60,10 +61,4 @@ source $HOME/.config/nvim/init_modules/treesitter.lua
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
-
-
-
-
-
-
 
