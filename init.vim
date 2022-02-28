@@ -40,6 +40,7 @@ source $HOME/.config/nvim/init_modules/comments.lua
   set diffopt+=vertical
 " disable incremental preview during substition
   set inccommand=""
+  set title
 
   let g:neosolarized_italic = 1
   let g:neosolarized_termtrans = 1

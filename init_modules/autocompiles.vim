@@ -21,10 +21,10 @@
 	autocmd BufWritePost *alacritty.yml.in silent !xalacritty
 
 " Recompile and restart dwm on write
-	autocmd BufWritePost */dwm/config.h !compiler % && kill -1 $(pidof dwm)
+	autocmd BufWritePost */dwm/config.h !compiler % && pkill -1 dwm
 
 " Recompile and restart dwmblocks on write
- autocmd BufWritePost */dwmblocks/config.h !compiler % && { killall -q dwmblocks;setsid dwmblocks & }
+	autocmd BufWritePost */dwmblocks/config.h !compiler % && { killall -q dwmblocks;setsid dwmblocks & }
 
 " Recompile and restart dmenu on write
 	autocmd BufWritePost */dmenu/config.h !compiler %
