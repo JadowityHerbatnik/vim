@@ -31,5 +31,3 @@
 
 	autocmd BufWritePost *.hs !compiler %
 
-" Shell scripits shebang
-	inoremap <leader>she  #!/usr/bin/env sh<CR>

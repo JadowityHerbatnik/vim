@@ -1,6 +1,3 @@
-" Very hand for operating on branches
-  map <leader>b :Merginal<CR>
-
   map <leader>gb :Git blame<CR>
 
   map <leader>gcd :Gvdiff!<CR>
