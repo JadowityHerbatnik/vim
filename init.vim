@@ -13,6 +13,7 @@ source $HOME/.config/nvim/init_modules/fzf.vim
 source $HOME/.config/nvim/init_modules/json.vim
 source $HOME/.config/nvim/init_modules/airline.vim
 source $HOME/.config/nvim/init_modules/syntax-highlighting.vim
+source $HOME/.config/nvim/init_modules/syntax-tree-surfer.lua
 source $HOME/.config/nvim/init_modules/treesitter.lua
 source $HOME/.config/nvim/init_modules/telescope.lua
 source $HOME/.config/nvim/init_modules/lsp.lua
