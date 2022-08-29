@@ -22,7 +22,7 @@ command! DeleteHiddenBuffers call DeleteHiddenBuffers()
 	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " ':w<CR>' is 4 key strokes, ',w' is two 1!1!!1
-	map <C-s> :mksession! ~/.vim_session.vim<CR>:update<CR>
+	map <C-s> :update<CR>
 
 " Reload vim
 	nnoremap <leader>sv <Esc>:source ~/.vimrc<CR>

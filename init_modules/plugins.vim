@@ -10,6 +10,7 @@ nmap <leader>pi :PlugInstall<CR>
 nmap <Leader>pc :PlugClean<CR>
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'tpope/vim-obsession'
 Plug 'chr4/nginx.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
