@@ -76,12 +76,13 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 -- setup all servers in one loop
-local servers = { 'tsserver', 'cssls', 'jsonls', 'yamlls', 'sumneko_lua', 'hls' }
+local servers = { 'tsserver', 'cssls', 'stylelint_lsp', 'jsonls', 'yamlls', 'sumneko_lua', 'hls' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     capabilities = capabilities,
     on_attach = on_attach,
     settings = {
+      stylelintplus = { autoFixOnFormat = true, autoFixOnSave = true },
       Lua = {
         runtime = {
           version = 'LuaJIT',
@@ -156,12 +157,13 @@ cmp.setup {
 }
 
 -- use null-ls as a proxy for eslint and prettier
-require("null-ls").setup({
+local null_ls = require("null-ls")
+null_ls.setup({
   sources = {
-    require("null-ls").builtins.formatting.prettierd,
-    require("null-ls").builtins.formatting.eslint_d,
-    require("null-ls").builtins.code_actions.eslint_d,
-    require("null-ls").builtins.diagnostics.eslint_d,
+    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.eslint_d,
+    null_ls.builtins.code_actions.eslint_d,
+    null_ls.builtins.diagnostics.eslint_d,
   },
   on_attach = function(client)
     print(client.resolved_capabilities.document_formatting)
