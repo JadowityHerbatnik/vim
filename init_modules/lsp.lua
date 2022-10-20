@@ -1,8 +1,7 @@
 local nvim_lsp = require('lspconfig')
 
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 ----------------
 -- DIAGNOSTICS--
@@ -32,41 +31,42 @@ vim.diagnostic.config({
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
   -- formatting for typescript and json files is handled by null-ls
   if client.name == 'tsserver' or client.name == 'jsonls' then
-    client.resolved_capabilities.document_formatting = false
-    client.resolved_capabilities.document_range_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
   end
 
 
-  local opts = { noremap = true, silent = true }
+  local opts = { noremap = true, silent = true, buffer = bufnr }
+
+  local telescope = require("telescope.builtin")
 
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<cmd>Telescope lsp_definitions<CR>', opts)
-  buf_set_keymap('n', 'gvd', '<cmd>vs<CR><cmd>Telescope lsp_definitions<CR>', opts)
-  buf_set_keymap('n', 'gtd', '<cmd>tab split<CR><cmd>Telescope lsp_definitions<CR>', opts)
-  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', 'gI', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  buf_set_keymap('n', 'gy', '<cmd>Telescope lsp_type_definitions<CR>', opts)
-  buf_set_keymap('n', 'gvy', '<cmd>vs<CR><cmd>Telescope lsp_type_definitions<CR>', opts)
-  buf_set_keymap('n', 'gty', '<cmd>tab split<CR><cmd>Telescope lsp_type_definitions<CR>', opts)
-  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-  buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-  buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+  vim.keymap.set('n', 'gd', function() telescope.lsp_definitions() end, opts)
+  vim.keymap.set('n', 'gvd', function() telescope.lsp_definitions({ jump_type = 'vsplit' }) end, opts)
+  vim.keymap.set('n', 'gtd', function() telescope.lsp_definitions({ jump_type = 'tab' }) end, opts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+  vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, opts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+  vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+  vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+  vim.keymap.set('n', '<space>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, opts)
+  vim.keymap.set('n', 'gy', function() telescope.lsp_type_definitions() end, opts)
+  vim.keymap.set('n', 'gvy', function() telescope.lsp_type_definitions({ jump_type = 'vsplit' }) end, opts)
+  vim.keymap.set('n', 'gty', function() telescope.lsp_type_definitions({ jump_type = 'tab' }) end, opts)
+  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
+  vim.keymap.set('n', 'gr', function() telescope.lsp_references({ fname_width = 60 }) end, opts)
+  vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+  vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+  vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+  vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, opts)
 
 end
 
@@ -131,24 +131,6 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
   }),
   sources = {
     { name = 'nvim_lsp' },
@@ -164,16 +146,17 @@ null_ls.setup({
     null_ls.builtins.formatting.eslint_d,
     null_ls.builtins.code_actions.eslint_d,
     null_ls.builtins.diagnostics.eslint_d,
+    on_attach = function(client, bufnr)
+      if client.supports_method("textDocument/formatting") then
+        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          group = augroup,
+          buffer = bufnr,
+          callback = function()
+            vim.lsp.buf.format({ bufnr = bufnr })
+          end,
+        })
+      end
+    end,
   },
-  on_attach = function(client)
-    print(client.resolved_capabilities.document_formatting)
-    if client.resolved_capabilities.document_formatting then
-      vim.cmd([[
-            augroup LspFormatting
-                autocmd! * <buffer>
-                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-            augroup END
-            ]])
-    end
-  end,
 })
