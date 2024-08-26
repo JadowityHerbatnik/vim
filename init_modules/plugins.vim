@@ -10,6 +10,7 @@ nmap <leader>pi :PlugInstall<CR>
 nmap <Leader>pc :PlugClean<CR>
 
 call plug#begin('~/.config/nvim/plugged')
+Plug 'github/copilot.vim'
 Plug 'ziontee113/syntax-tree-surfer'
 Plug 'tpope/vim-obsession'
 Plug 'chr4/nginx.vim'

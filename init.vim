@@ -17,6 +17,7 @@ source $HOME/.config/nvim/init_modules/syntax-tree-surfer.lua
 source $HOME/.config/nvim/init_modules/treesitter.lua
 source $HOME/.config/nvim/init_modules/telescope.lua
 source $HOME/.config/nvim/init_modules/lsp.lua
+source $HOME/.config/nvim/init_modules/copilot.lua
 
 " Some basics:
   set background=dark
