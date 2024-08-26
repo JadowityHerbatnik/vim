@@ -31,7 +31,6 @@ vim.diagnostic.config({
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-
   -- formatting for typescript and json files is handled by null-ls
   if client.name == 'tsserver' or client.name == 'jsonls' then
     client.server_capabilities.documentFormattingProvider = false
@@ -67,7 +66,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
   vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, opts)
-
 end
 
 -- setup Lua path
@@ -76,33 +74,55 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 -- setup all servers in one loop
-local servers = { 'tsserver', 'cssls', 'stylelint_lsp', 'jsonls', 'yamlls', 'sumneko_lua', 'hls' }
+local servers = { 'tsserver', 'jsonls', 'yamlls', 'hls', 'prismals', 'pyright',
+  'phpactor' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     capabilities = capabilities,
     on_attach = on_attach,
-    settings = {
-      stylelintplus = { autoFixOnFormat = true, autoFixOnSave = true },
-      Lua = {
-        runtime = {
-          version = 'LuaJIT',
-          path = runtime_path,
-        },
-        diagnostics = {
-          -- Get the language server to recognize the `vim` global
-          globals = { 'vim' },
-        },
-        workspace = {
-          -- Make the server aware of Neovim runtime files
-          library = vim.api.nvim_get_runtime_file("", true),
-        },
-        telemetry = {
-          enable = false,
-        },
-      },
-    },
   }
 end
+
+nvim_lsp.cssls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  init_options = {
+    provideFormatter = false,
+  }
+}
+
+nvim_lsp.stylelint_lsp.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = { 'css', 'scss', 'less' },
+  settings = {
+    stylelintplus = { autoFixOnFormat = true, autoFixOnSave = true },
+  }
+}
+
+nvim_lsp.lua_ls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+        path = runtime_path,
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { 'vim' },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
 
 --------------------
 -- AUTOCOMPLETION --
