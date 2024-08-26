@@ -27,7 +27,7 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-Plug 'rakr/vim-one'
+Plug 'navarasu/onedark.nvim'
 Plug 'chriskempson/base16-vim'
 Plug 'lilydjwg/colorizer'
 Plug 'camspiers/lens.vim'
