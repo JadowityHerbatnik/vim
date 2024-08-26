@@ -2,6 +2,7 @@ let g:mapleader =","
 
 source $HOME/.config/nvim/init_modules/plugins.vim
 source $HOME/.config/nvim/init_modules/colorscheme.lua
+source $HOME/.config/nvim/init_modules/rooter.lua
 source $HOME/.config/nvim/init_modules/navigation.vim
 source $HOME/.config/nvim/init_modules/snippets.vim
 source $HOME/.config/nvim/init_modules/general.vim

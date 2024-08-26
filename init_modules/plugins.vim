@@ -39,7 +39,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-rooter'
+Plug 'notjedi/nvim-rooter.lua'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'rhysd/clever-f.vim'
