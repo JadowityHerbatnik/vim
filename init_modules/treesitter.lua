@@ -25,10 +25,6 @@ require 'nvim-treesitter.configs'.setup {
       show_help = '?',
     },
   },
- -- enable module from nvim-ts-context-commentstring plugin
-  context_commentstring = {
-    enable = true
-  },
   ensure_installed = {
     "javascript",
     "typescript",
