@@ -16,6 +16,9 @@
 	autocmd FileType vue,javascript,typescriptreact,typescript inoremap <leader>imp import <++> from "<++>";<Esc>I
 
 	autocmd FileType vue,javascript,typescriptreact,typescript inoremap <leader>di dispatch( { type: "" } )<Esc>F"i
+	autocmd FileType vue,javascript,typescriptreact,typescript inoremap <leader>ud const dispatch = useDispatch()<Esc>F(i
+	autocmd FileType vue,javascript,typescriptreact,typescript inoremap <leader>us const <++> = useSelector(makeSelect<++>())<Esc>/<++><Enter>"_c4l
+
 
 	autocmd FileType vue,javascript,typescriptreact,typescript inoremap <leader>sf ${ ( { } ) => <++>}<Esc>F{a
 
