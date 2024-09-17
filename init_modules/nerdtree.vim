@@ -1,5 +1,6 @@
-" Nerd tree
-  let NERDTreeMapOpenVSplit='v'
+let g:NERDTreeMapOpenVSplit = 'V'
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeShowHidden = 1
 
-  map <leader>n :NERDTreeToggle %<CR>
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <leader>n :NERDTreeFind<CR>
+
