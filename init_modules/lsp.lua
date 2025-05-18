@@ -75,7 +75,7 @@ table.insert(runtime_path, "lua/?/init.lua")
 
 -- setup all servers in one loop
 local servers = { 'tsserver', 'jsonls', 'yamlls', 'hls', 'prismals', 'pyright',
-  'phpactor' }
+  'phpactor', 'openscad_lsp' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     capabilities = capabilities,
