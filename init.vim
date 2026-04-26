@@ -24,7 +24,7 @@ source $HOME/.config/nvim/init_modules/copilot.lua
 
 " Some basics:
   set background=dark
-  set go=a
+  " set go=a
   set mouse=a
   set clipboard+=unnamedplus
   nnoremap c "_c
