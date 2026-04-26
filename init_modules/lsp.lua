@@ -32,7 +32,7 @@ vim.diagnostic.config({
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   -- formatting for typescript and json files is handled by null-ls
-  if client.name == 'tsserver' or client.name == 'jsonls' then
+  if client.name == 'ts_ls' or client.name == 'jsonls' then
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
   end
@@ -74,33 +74,39 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 -- setup all servers in one loop
-local servers = { 'tsserver', 'jsonls', 'yamlls', 'hls', 'prismals', 'pyright',
+local servers = { 'ts_ls', 'jsonls', 'yamlls', 'hls', 'prismals', 'pyright',
   'phpactor', 'openscad_lsp' }
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-  }
+  vim.lsp.enable(lsp)
 end
 
-nvim_lsp.cssls.setup {
+for _, lsp in ipairs(servers) do
+  vim.lsp.config(lsp, {
+    capabilities = capabilities,
+    on_attach = on_attach,
+  })
+end
+
+vim.lsp.config('cssls', {
   capabilities = capabilities,
   on_attach = on_attach,
   init_options = {
     provideFormatter = false,
   }
-}
+})
+vim.lsp.enable('cssls')
 
-nvim_lsp.stylelint_lsp.setup {
+vim.lsp.config('stylelint_lsp', {
   capabilities = capabilities,
   on_attach = on_attach,
   filetypes = { 'css', 'scss', 'less' },
   settings = {
     stylelintplus = { autoFixOnFormat = true, autoFixOnSave = true },
   }
-}
+})
+vim.lsp.enable('stylelint_lsp')
 
-nvim_lsp.lua_ls.setup {
+vim.lsp.config('lua_ls', {
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {
@@ -122,7 +128,7 @@ nvim_lsp.lua_ls.setup {
       },
     },
   },
-}
+})
 
 --------------------
 -- AUTOCOMPLETION --
@@ -162,10 +168,11 @@ cmp.setup {
 local null_ls = require("null-ls")
 null_ls.setup({
   sources = {
+    null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.prettierd,
-    null_ls.builtins.formatting.eslint_d,
-    null_ls.builtins.code_actions.eslint_d,
-    null_ls.builtins.diagnostics.eslint_d,
+    require("none-ls.formatting.eslint"),
+    require("none-ls.code_actions.eslint"),
+    require("none-ls.diagnostics.eslint"),
     on_attach = function(client, bufnr)
       if client.supports_method("textDocument/formatting") then
         vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
